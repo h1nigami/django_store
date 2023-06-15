@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;1,300&family=DM+Sans:ital,wght@0,400;1,500&family=Fjalla+One&family=Lato:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Poppins:wght@400;500;600&family=Roboto+Mono:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+    text-decoration: none;
+    list-style: none;
+    text-decoration:none;
+}
+
+.wrapper{
+    width: 81.6%;
+    margin: 0 auto;
+}
+.navigator{
+ background-color:white;
+}
+.navigator-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.menu {
+    display: flex;
+    column-gap: 30px;
+    
+}
+.menu a {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 143%;
+    color: rgb(0, 0, 0);
+    transition: .3s;
+}
+.menu a:hover {
+    color: rgb(116, 19, 19);
+}
+.heading{
+margin-bottom: 50px;
+}
+
+.heading_tarifs{
+    margin-bottom: 50px;
+}
+
+.flex-container__tarifs{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 143%;
+    border-radius: 10px;
+    box-shadow: 2px 8px 16px rgba(0, 0, 0.3);
+    margin-bottom: 50px;
+    
+}
+.button-sale a{
+    padding: 8px 10px;
+    border: none;
+    background-color: rgb(155, 28, 28);
+    transition: .3s;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 143%;
+    text-decoration:none;
+    color: white;
+    
+}
+.button-sale  :hover{
+    text-decoration:none;
+    color: rgb(216, 176, 176);
+}
+.flex-container__tarifs li{
+    margin-bottom: 1em;
+}
+
+.conteiner__flex-item4{
+    display: flex;
+    align-items: center;
+}
+
+.conteiner__flex-item1 {
+    display: flex;
+    align-items: center;
+   
+}
+.conteiner__flex-item1 h2 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 143%;
+}
+
+.flex_container_4{
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+
+}
+.content-tarifs{
+    margin-bottom: 100px;
+}
+
+/* Секция magazin_sale */
+
+.magazin_sale{
+    margin-bottom: 100px;
+}
+
+.section-heading{
+    margin-bottom: 100px;
+}
+
+.section-heading h2{
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 143%;
+}
+
+.flex-container__phones{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.flex-item__flex-container{
+    width: 32.25%;
+display: flex;
+flex-direction: column;
+border-radius: 10px;
+box-shadow: 2px 8px 16px rgba(0, 0, 0.3);
+}
+.flex-item__flex-container img{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+.text-block__flex-item{
+    padding: 50px 44px;
+    border: 1px solid #F2F6FA;
+}
+
+.text-block__flex-item h4{
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 143%;
+    margin-bottom: 12px;
+}
+
+.text-block__flex-item p{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 143%;
+    margin-bottom: 24px;
+}
+.price__flex-item{
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 143%;
+    color: #434B53;
+}
+
+.btn__flex-item{
+    padding: 20px 35px;
+    border-radius: 8px;
+    transition:  .3s;
+    cursor: pointer;
+    border: none;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 143%;
+}
+.btn__flex-item :hover{
+    color: #434B53;
+}
+
+/* Секция отзывы */
+
+.set-reviews{
+    padding-top: 100px;
+    padding-bottom: 106px;
+}
+
+.flex-container__set-reviews{
+    display: flex;
+    justify-content: space-between;
+}
+.flex-item-text__set-reviews {
+    flex: 50%;
+}
+
+.flex-item-text__set-reviews h2{
+    text-align: left;
+    margin-bottom: 36px;
+}
+.list-reasons{
+    margin-bottom: 100px;
+    width: 77.34%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+.list-reasons li{
+   font-weight: 400;
+   font-size: 27px;
+   line-height: 143%;
+   
+    
+} 
+
+ .button__set-reviews {
+    padding: 30px 50px;
+    border: none;
+    transition: .3s;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 150%;
+    color: black;
+}
+
+.button__set-reviews:hover {
+    color: black;
+}
+
+
+.flex-item-img__set-reviews {
+    flex: 50%;
+}
+
+.flex-item-img__set-reviews img {
+    width: 100%;
+}
+.universal-h2{
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 150%;
+}
+
+/* * Секция contacts */ */
+
+
+.contacts {
+    padding-top: 100px;
+    padding-bottom: 74px;
+}
+
+.flex-container__contacts {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    /* flex-wrap: wrap; */
+}
+
+.flex-item-map__contacts {
+    border: 5px dashed rgb(145, 18, 18);
+    border-radius: 20px;
+    margin-right: 20px;
+    transition: .1s;
+    width: 50%;
+}
+
+.flex-item-map__contacts iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+.flex-item-map__contacts:hover {
+    border: 5px dashed rgb(145, 18, 18);
+}
+
+.flex-item-text__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    width: 49.23%;
+}
+
+.flex-item-text__contacts h2 {
+    text-align: left;
+}
+
+.content__flex-item-text {
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contact__content img {
+    margin-bottom: 20px;
+}
+
+.contact__content h4 {
+    margin-bottom: 6px;
+    font-weight: 700;
+   font-size: 27px;
+   line-height: 143%;
+}
+
+.contact__content p {
+    margin-bottom: 6px;
+    font-weight: 400;
+   font-size: 20px;
+   line-height: 143%;
+    line-height: 150%;
+}
+
+.contact__content a {
+    margin-bottom: 6px;
+    font-weight: 400;
+   font-size: 27px;
+   line-height: 143%;
+    color: blue;
+    text-decoration: underline;
+}
+
+.heading_contacts{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-weight: 400;
+   font-size: 45px;
+   line-height: 143%;
+}
+
+
+/* Секция info-footer */
+
+.info-footer {
+    padding-top: 54px;
+    padding-bottom: 56px;
+}
+
+.flex-container__info-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-container__info-footer p {
+    line-height: 150%;
+    color: #7E868E;
+}
+
+.block-social-icon {
+    display: flex;
+    gap: 43px;
+    margin-right: 33px;
+}

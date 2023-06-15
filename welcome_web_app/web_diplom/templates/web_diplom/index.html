@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вэллком</title>
+    {% load  static %}
+    {% block css_additional %}
+        <link rel="stylesheet" href="{%static 'css/style.css'%}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link rel="stylesheet" href="{%static 'css/modalWindow.css'%}">
+    {% endblock %}
+</head>
+<body>
+
+    <!-- Модальное окно -->
+    {% block modal_window %}
+        <div class="modal-window" id="modalWindow">
+            <div class="modal-content" id="modalContent">
+                <div class="modal-header">
+                    <h2>Написать отзыв</h2>
+                    <div class="modal-close" id="modalClose">
+                        <img src="{% static 'img/cross.svg' %}" alt="cross">
+                    </div>
+                </div>
+                <div class="modal-main">
+                    <form action="">
+                        <input type="text" name="userName" id="userNameForm" placeholder="Ваше имя">
+                        <textarea name="review" id="reviewForm" cols="30" rows="10" placeholder="Отзыв"></textarea>
+                        <input type="submit" value="Отправить отзыв">
+                        <div class="approval-block">
+                            <input type="checkbox" name="approval" id="approvalForm">
+                            <label for="approvalForm"> Соглашаюсь с<a href="#" class="approval-text"> условиями передачи данных</a></label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+    <!-- СЕКЦИЯ ШАПКА И МЕНЮ -->
+        <header>
+            <section class="navigator">
+                <div class="wrapper">
+                    <div class="navigator-block">
+                        <div class="logo">
+                            <a href="#">
+                                <img src="{% static 'img/logo.svg' %}" Width="300" Height="200" alt="logo">
+                            </a>
+                        </div>
+                        <nav>
+                            
+                            <ul class="menu">
+                                <li><a href="https://goo.gl/maps/Vw2VHosa6sNe89hj6"> точка выдачи — Урень, Ленина 99</a></li>
+                                <li><a href="tel:+7831 222 67 70"> Заказать обратный звонок</a></li>
+                                <li>c 09:00 до 18:00</li>
+                                <li><strong>8 831 222 67 70</strong></li>
+                               
+                            </ul> 
+                        </nav>
+                    </div>
+                </div>
+             </section>
+             <section class="heading">
+                <div class="wrapper">
+                    <div class="heading-block">
+                        <div class="background-block">
+                            <img src="{% static 'img/aCYKQAapbvk.jpg' %}" alt="aCYKQAapbvk" width="100%">
+                        </div>
+                    </div>
+                </div>
+             </section>
+            </header> 
+
+        {% block tarifs %}
+            <main>
+                <section class="content-tarifs">
+                    <div class="wrapper">
+                        {% if tarifs.count > 0 %}
+                        <div class="content-tarifs__heading">
+                            <div class="heading_tarifs">
+                                <h1>Тарифы для смартфонов</h1>
+                            </div>
+                        {% for tarif in tarifs %}
+                        <div class="flex-container__tarifs">
+                            <div class="conteiner__flex-item1">
+                                <h2>{{ tarif.name }}</h2>
+                                
+                            </div>
+                            <div class="conteiner__flex-item2">
+                                <ul>
+                                <li>{{ tarif.description }}</li> 
+                            </ul>
+                            </div>
+                            <div class="conteiner__flex-item3">
+                                <ul>
+                                    <li>{{ tarif.description1 }}</li> 
+                                </ul>
+                            </div>
+                            <div class="conteiner__flex-item4">
+                                <ul>
+                            <h3>{{ tarif.price }} ₽ <br> в месяц</h3>
+                            <div class="button-sale">                            
+                                <a class="buttons" href="basket">Купить</a>
+                            </div>
+                                </ul>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <div class="content-tarifs__heading">
+                            <div class="heading_tarifs">
+                                <h1>Тарифов нет :(</h1>
+                            </div>
+                        {% endif %}
+                        
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                </section>
+            {% endblock %}
+            <section class="magazin_sale">
+                {% block magazin_sale %}
+                {% if phones.count > 0 %}
+                <div class="wrapper">
+                    <div class="section_content">
+                        <div class="section-heading">
+                            <h2>Новинки</h2>
+                        </div>                        
+                        <div class="flex-container__phones">
+                            {% for phone in phones %}
+                            <div class="flex-item__flex-container">
+                                <img src="{{ phone.img.url }}"  alt="{{ phone.name }}">
+                                <div class="text-block__flex-item">
+                                    <h4>{{ phone.name }}</h4>
+                                    <p>Экран: {{ phone.screen }}</p>
+                                        Память: {{ phone.memory }}
+                                        Фото: {{ phone.camera }}
+                                        Аккумулятор: {{ phone.accumulator }} мА·ч
+                                        Процессор: {{ phone.cpu }}</p>
+                                    <p class="price__flex-item">{{phone.price}} ₽/шт.</p>
+                                    <button class="btn__flex-item">Купить</button>
+                                </div>
+                            </div>                                           
+                    {% endfor %}
+                    {% else %}
+                    <div class="wrapper">
+                        <div class="section_content">
+                            <div class="section-heading">
+                                <h2>Нет новинок :(</h2>
+                            </div>  
+                    {% endif %}
+                {% endblock %}
+            </section>
+
+            <section class="set-reviews">
+                <div class="wrapper">
+                    <div class="flex-container__set-reviews">
+                         <div class="flex-item-text__set-reviews">
+                            <h2 class="universal-h2">Оставить отзыв</h2>
+                            <ul class="list-reasons">
+                                <li> <span> Для нас важно мнение каждого</span> </li>
+                                <li> <span> Положительно относимся к конструктивной критике, это позволяет сделать наш сервис лучше</span> </li>
+                                <li> <span> Вас что-то не устроило? 
+                                    Опишите проблему. Мы приложим все силы, чтобы решить возникшее недорозумение</span> </li>
+                            </ul>
+                            <button class="button__set-reviews" id="buttonSetReviews">Оставить отзыв</button>
+                         </div>
+    
+                         <div class="flex-item-img__set-reviews">
+                            <img src="{% static 'img/wellcom_otzawv.jpg' %}"  alt="feedback">
+                         </div>
+                    </div>
+                </div>
+        </main>
+        <footer>
+            <section class="contacts">
+                <div class="wrapper">
+                    <h2 class="heading_contacts">
+                        Где нас найти
+                    </h2>
+                    <div class="flex-container__contacts">
+                        <div class="flex-item-map__contacts">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d159.53019128879808!2d45.789055988603074!3d57.454934443819596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4156c85f9ec9de55%3A0x6483b60b65a80989!2z0JHQuNC70LDQudC9!5e0!3m2!1sru!2sru!4v1686137613470!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="flex-item-text__contacts">
+                            <h2 class="universal-h2">
+                                Контакты
+                            </h2>
+                            <div class="content__flex-item-text">
+                                <div class="contact__content">
+                                    <img src="{% static 'img/person-video.svg' %}" width="40px" height="40px" alt="icon-phone">
+                                    <h4>Номер телефона</h4>
+                                    <p>Звоните по номеру телефона и мы оперативно отреагируем</p>
+                                    <a href="tel:+7831 222 67 70">8 831 222 67 70</a>
+                                </div>
+                                <div class="contact__content">
+                                    <img src="{% static 'img/icon-email.svg' %}" alt="icon-email">
+                                    <h4>Почта</h4>
+                                    <p>Вы можете написать нам на почту в любое время суток</p>
+                                    <a href="mailto:hr@wellcom52.ru">hr@wellcom52.ru</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="info-footer">
+                <div class="wrapper">
+                    <div class="flex-container__info-footer">
+                        <p>Copyright © 2023 wellcom52. Powered by wellcom52.</p>
+                        <div class="block-social-icon">
+                            <a href="https://vk.link/wellcom52"><img src="{% static 'img/icon-vk.svg' %}" alt="icon-vk"></a>
+                            <a href="#"><img src="{%static 'img/icon-instagram.svg' %}" alt="icon-instagram"></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </footer>
+
+            
+         <script src="{%static 'js/modalWindow.js'%}"></script>
+</body>
+</html>
