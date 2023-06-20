@@ -10,7 +10,6 @@ def index(request):
     if request.method == 'POST':
         rewiev = request.POST.get('review', None)
         name = request.POST.get('userName', None)
-        print(rewiev, name)
         new_rewiev = Rewiev.objects.create(name=name, review=rewiev)
         new_rewiev.save()
     return render(request, 'web_diplom/index.html', context)
