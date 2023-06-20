@@ -15,4 +15,9 @@ def index(request):
     return render(request, 'web_diplom/index.html', context)
 
 def basket(request):
-    return render(request, 'web_diplom/basket.html', {'title': 'Корзина'})
+    return render(request, 'web_diplom/basket.html')
+
+def rewievs(request):
+    reviews = Rewiev.objects.all()
+    context = {'reviews': reviews,}
+    return render(request, 'web_diplom/rewievs.html', context=context)
