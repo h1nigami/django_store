@@ -22,3 +22,14 @@ window.addEventListener('click', (event) => {
         modalWindow.style.transform = 'translateY(-50%)';
     }
 })
+
+function sendFormData(){
+    var form_data = new FormData(document.getElementById("form"));
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", document.getElementById("form").action, true);
+    xhr.send(form_data);
+}
+document.getElementById("form").addEventListener("submit"), function () {
+    event.preventDefault();
+    sendFormData();
+}
