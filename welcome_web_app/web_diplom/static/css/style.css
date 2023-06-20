@@ -128,6 +128,7 @@ margin-bottom: 50px;
 }
 
 .flex-item__flex-container{
+    margin-bottom: 20px;
     width: 32.25%;
 display: flex;
 flex-direction: column;
