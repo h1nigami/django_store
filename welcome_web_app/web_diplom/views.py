@@ -20,4 +20,4 @@ def basket(request):
 def rewievs(request):
     reviews = Rewiev.objects.all()
     context = {'reviews': reviews,}
-    return render(request, 'web_diplom/rewievs.html', context=context)
+    return render(request, 'web_diplom/reviews.html', context=context)
