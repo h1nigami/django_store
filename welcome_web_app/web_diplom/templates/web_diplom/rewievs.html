@@ -25,7 +25,7 @@
                     <div class="wrapper">
                         <div class="navigator-block">
                             <div class="logo">
-                                <a href="#">
+                                <a href="/">
                                     <img src="/static/img/logo.svg" width="300" height="200" alt="logo">
                                 </a>
                             </div>
@@ -60,17 +60,30 @@
                             
                             <div class="content-tarifs__heading">
                                 <div class="heading_tarifs">
-                                    <h1>Корзина</h1>
+                                    <h1>Отзывы</h1>
                                 </div>
-                            
-                            
-                            
-                        
-                    
+                                {% block reviews %}
+                                {% if reviews.count > 0 %}
+                                <div class="wrapper">
+                                    <div class="section_content">                        
+                                        <div class="flex-container__phones">
+                                            {% for review in reviews %}
+                                            <div class="flex-item__flex-container">
+                                                <div class="text-block__flex-item">
+                                                    <h4>{{ review.name }}</h4>
+                                                    <p>{{ review.review }}</p>
+                                                </div>
+                                            </div>                                           
+                                    {% endfor %}
+                                    {% else %}
+                                    <div class="wrapper">
+                                        <div class="section_content">
+                                            <div class="section-heading">
+                                                <h2>Нет отзывов :(</h2>
+                                            </div>  
+                                    {% endif %}
+                                {% endblock %}
                     </section>
-                <form method = "POST" action = "">
-                    {% csrf_token %}
-                    <button type="submit" class="button">Купить всё</button>
     
                 </main>
             <footer>

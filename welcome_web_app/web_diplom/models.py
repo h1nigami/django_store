@@ -26,3 +26,6 @@ class Tarifs(models.Model):
 class Rewiev(models.Model):
     name = models.CharField(max_length=128)
     review = models.TextField()
+    
+class Cart(Phone):
+    name = Phone.name
