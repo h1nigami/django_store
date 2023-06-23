@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Phone, Tarifs, Rewiev
+from .models import Phone, Tarifs, Rewiev, Cart
 
 
 def index(request):
@@ -15,7 +15,9 @@ def index(request):
     return render(request, 'web_diplom/index.html', context)
 
 def basket(request):
-    return render(request, 'web_diplom/basket.html')
+    carts = Cart.objects.filter(user=request.user)
+    context = {'carts': carts,}
+    return render(request, 'web_diplom/basket.html', context=context)
 
 def rewievs(request):
     reviews = Rewiev.objects.all()

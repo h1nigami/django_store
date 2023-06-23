@@ -2,6 +2,11 @@ from django.db import models
 from django.forms import Widget
 from django import forms
 
+class User(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    password = models.CharField(max_length=255)
+
 class Phone(models.Model):
     name = models.CharField(max_length=255)
     screen = models.CharField(max_length=255)
@@ -28,4 +33,6 @@ class Rewiev(models.Model):
     review = models.TextField()
     
 class Cart(Phone):
-    name = Phone.name
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    phone = models.ForeignKey(Phone, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=1)
