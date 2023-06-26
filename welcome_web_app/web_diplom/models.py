@@ -32,7 +32,3 @@ class Rewiev(models.Model):
     name = models.CharField(max_length=128)
     review = models.TextField()
     
-class Cart(Phone):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    phone = models.ForeignKey(Phone, on_delete=models.CASCADE)
-    quantity = models.PositiveIntegerField(default=1)
